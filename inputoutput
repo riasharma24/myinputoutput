@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+class Keyboard
+{
+public:
+Keyboard& operator<<(int x)
+{
+printf("%d",x);
+return *this;
+}
+Keyboard& operator<<(float x)
+{
+printf("%f",x);
+return *this;
+}
+Keyboard& operator<<(double x)
+{
+printf("%f",x);
+return *this;
+}
+Keyboard& operator<<(char x)
+{
+printf("%d",x);
+}
+Keyboard& operator<<(const char *x)
+{
+printf("%s",x);
+}
+Keyboard& operator<<(void (*p)())
+{
+p();
+return *this;
+}
+};
+
+namespace myinputoutput
+{
+Keyboard kout;
+void newLine()
+{
+printf("\n");
+}
+}
+
